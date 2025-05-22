@@ -1,0 +1,19 @@
+# XGBoost model configuration
+
+# Model parameters
+n_estimators: 1000
+max_depth: 6
+learning_rate: 0.01
+subsample: 0.8
+colsample_bytree: 0.8
+random_state: 42
+
+# Training parameters
+early_stopping_rounds: 50
+eval_metric: rmse
+
+# Cross-validation parameters
+n_splits: 5
+
+# Feature importance parameters
+shap_sample_size: 1000  # Number of samples to use for SHAP analysis 

@@ -1,0 +1,11 @@
+venv/
+data/
+*.parquet
+*.csv
+*.json
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.env

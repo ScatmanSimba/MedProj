@@ -1,0 +1,73 @@
+# .cursorrules for Psychiatric Medication Response Predictor
+
+# Existing Code Base
+• Build upon existing med_dictionary1803.py for medication name extraction
+• Build upon existing snapshot.py for Reddit data collection
+• Maintain consistent coding style with existing files
+• Add proper docstrings and examples for all new functions and modules
+
+# Project Structure Rules
+• Follow the file structure defined in PRD.md
+• All Python source code must go in the /src directory
+• Follow PEP 8 style guidelines for Python code
+• Use type hints for all function parameters and return values
+
+# Model Implementation Rules
+• Use XGBoost for the GBT model implementation
+• Implement multi-task regression for the three response axes
+• Always include early stopping with validation data
+• Add proper feature importance tracking and SHAP analysis
+• Implement confidence-aware training with sample weights
+• Include emoji signal integration in feature engineering
+• Support both sentence-level and document-level analysis
+
+# Data Management Rules
+• Reddit data should be stored in parquet format
+• Receptor binding data should be in CSV format with normalized log(Ki) values
+• All data loading and merging happens in data_loader.py
+• Include proper validation checks for data completeness and quality
+• Track confidence scores for all annotations
+• Maintain temporal relationship information
+
+# Medication NER Rules
+• Leverage the existing med_dictionary1803.py implementation
+• Normalize medication names to a standard format
+• Extract and standardize dosage information when available
+• Handle common misspellings and abbreviations
+• Support emoji-based medication mentions
+• Track medication status (current/past/brief/prospective)
+
+# Effect Attribution Rules
+• Implement dependency parsing for causality detection
+• Use pattern matching for direct causal language
+• Apply proximity-based attribution for nearby effects
+• Consider sentence-level context for accurate linking
+• Track confidence scores for each attribution
+• Support both explicit and implicit causal relationships
+• Handle multiple medications in the same context
+• Consider negation and uncertainty markers
+
+# Response Classification Rules
+• Implement classifiers for the three clinical axes defined in the PRD
+• Use DistilBERT for embedding generation
+• Include both keyword-based and embedding-based classification
+• Output continuous scores (0-1) for each response dimension
+• Support emoji-based emotional signals
+• Implement duplicate detection prevention
+• Normalize all scores to [0,1] range
+
+# Evaluation Rules
+• Compare against all three baselines specified in the PRD
+• Include macro-R² calculations across the three axes
+• Generate SHAP plots for feature attribution
+• Document all findings in the evaluation.md file
+• Include confidence-aware evaluation metrics
+• Track emoji signal impact on predictions
+
+# Documentation Rules
+• Include appropriate disclaimers about the limitations of predictions
+• Document all ethical considerations in the README.md
+• Maintain comprehensive docstrings for all functions
+• Include examples in docstrings
+• Document confidence scoring methodology
+• Explain emoji signal integration
